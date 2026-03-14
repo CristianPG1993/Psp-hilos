@@ -15,5 +15,16 @@ public class Main {
         h1.start();
         h2.start();
         h3.start();
+
+        try {
+            h1.join();
+            h2.join();
+            h3.join();
+
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        System.out.println("La carrera ha terminado");
     }
 }
